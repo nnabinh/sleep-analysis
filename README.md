@@ -66,42 +66,6 @@ yarn # at project root, installs the node dependencies
 yarn start # at project root, starts Metro Bundler
 ```
 
-## 🤖 Android Setup
-
-You will need to install Java and Android Studio:
-
-```shell
-brew cask install adoptopenjdk8 android-studio
-```
-
-Open Android Studio, click "Open an Existing Project", and open this project's `android` folder. After that, let Gradle perform syncing (it may take a long time). Android Studio may ask to update Gradle to the latest version, but for the meantime please ignore it as updating can case issues with packages with duplicate names.
-
-Add the Android SDK (installed along with Android Studio) to the PATH environment variable by adding the following lines to `~/.zshrc` or your desired shell configuration file then applying the changes:
-
-```shell
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export ANDROID_SDK=$ANDROID_HOME
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-```
-
-You can now automatically launch the Android emulator and push code to it by running:
-
-```shell
-yarn android # at project root
-```
-
-NOTE: `Metro Bundler` must be running so you should do this a new terminal session.
-
-To launch the emulator without running Android Studio:
-
-```shell
-emulator -list-avds # lists available devices
-emulator -and <emulator_name> # starts specific device
-```
-
 ## 📱 iOS Setup
 
 You will need to install Xcode from the App Store or by downloading it from the Apple Developer website. If you have Homebrew installed, you most likely have Xcode installed as well.
@@ -143,7 +107,7 @@ sudo gem install bundler
 **Install CocoaPods**
 
 ```shell
-sudo gem install cocoapods -v 1.10.1
+bundle install
 ```
 
 **Install iOS Dependencies**
@@ -157,6 +121,42 @@ cd .. # go back at project root
 NOTE: `Metro Bundler` must be running so you should do this on a new terminal session.
 
 You can run the iOS simulator without running XCode by pinning the icon to the Dock. You can also choose which device to launch by right-clicking it and choosing Device.
+
+## 🤖 Android Setup
+
+You will need to install Java and Android Studio:
+
+```shell
+brew cask install adoptopenjdk8 android-studio
+```
+
+Open Android Studio, click "Open an Existing Project", and open this project's `android` folder. After that, let Gradle perform syncing (it may take a long time). Android Studio may ask to update Gradle to the latest version, but for the meantime please ignore it as updating can case issues with packages with duplicate names.
+
+Add the Android SDK (installed along with Android Studio) to the PATH environment variable by adding the following lines to `~/.zshrc` or your desired shell configuration file then applying the changes:
+
+```shell
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK=$ANDROID_HOME
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+
+You can now automatically launch the Android emulator and push code to it by running:
+
+```shell
+yarn android # at project root
+```
+
+NOTE: `Metro Bundler` must be running so you should do this a new terminal session.
+
+To launch the emulator without running Android Studio:
+
+```shell
+emulator -list-avds # lists available devices
+emulator -and <emulator_name> # starts specific device
+```
 
 ## ⛑ Troubleshooting
 
