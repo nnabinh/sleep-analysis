@@ -158,6 +158,18 @@ emulator -list-avds # lists available devices
 emulator -and <emulator_name> # starts specific device
 ```
 
+## Debugging
+
+Download Reactotron here:
+
+https://github.com/infinitered/reactotron/releases
+
+For Android, expose the following port
+
+```shell
+adb reverse tcp:9090 tcp:9090
+```
+
 ## ⛑ Troubleshooting
 
 If you encountered any issues when getting the Android build running, please first try:

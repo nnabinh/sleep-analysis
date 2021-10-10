@@ -18,6 +18,10 @@ import {
 import { PersistGate } from 'redux-persist/integration/react';
 import store from './src/configure-store';
 
+if (__DEV__) {
+  import('./src/reactotron').then(() => console.log('Reactotron Configured'));
+}
+
 const Section: React.FC<{
   title: string;
 }> = ({ children, title }) => {
