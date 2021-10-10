@@ -1,4 +1,4 @@
-# Paidy App 2.0 in React Native
+# React Native
 
 This setup guide assumes that you are using MacOS and have Homebrew installed.
 
